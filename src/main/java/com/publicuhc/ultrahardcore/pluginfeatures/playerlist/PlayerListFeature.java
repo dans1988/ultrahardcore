@@ -22,7 +22,6 @@
 package com.publicuhc.ultrahardcore.pluginfeatures.playerlist;
 
 import com.google.common.collect.Range;
-import com.google.common.collect.Ranges;
 import com.publicuhc.pluginframework.configuration.Configurator;
 import com.publicuhc.pluginframework.shaded.inject.Inject;
 import com.publicuhc.pluginframework.shaded.inject.Singleton;
@@ -68,10 +67,10 @@ public class PlayerListFeature extends UHCFeature {
     private static final double LOW_HEALTH_BOUNDARY = 6.0D;
     private static final double MID_HEALTH_BOUNDARY = 12.0D;
 
-    private static final Range<Double> DEAD_HEALTH = Ranges.closed(0.0D, 0.0D);
-    private static final Range<Double> LOW_HEALTH = Ranges.openClosed(0.0D, LOW_HEALTH_BOUNDARY);
-    private static final Range<Double> MIDDLE_HEALTH = Ranges.openClosed(LOW_HEALTH_BOUNDARY, MID_HEALTH_BOUNDARY);
-    private static final Range<Double> HIGH_HEALTH = Ranges.greaterThan(MID_HEALTH_BOUNDARY);
+    private static final Range<Double> DEAD_HEALTH = Range.closed(0.0D, 0.0D);
+    private static final Range<Double> LOW_HEALTH = Range.openClosed(0.0D, LOW_HEALTH_BOUNDARY);
+    private static final Range<Double> MIDDLE_HEALTH = Range.openClosed(LOW_HEALTH_BOUNDARY, MID_HEALTH_BOUNDARY);
+    private static final Range<Double> HIGH_HEALTH = Range.greaterThan(MID_HEALTH_BOUNDARY);
 
     private Objective m_objectivePlayerList;
     private Objective m_objectiveUnderName;
